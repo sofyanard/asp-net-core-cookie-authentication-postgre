@@ -1,0 +1,18 @@
+﻿@using System.Security.Claims;
+
+<ul class="navbar-nav">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <li class="nav-item">
+            <form class="form-inline" asp-action="Logout" asp-controller="Account" method="post">
+                <button type="submit" class="nav-link text-dark btn btn-link">Logout @(((ClaimsIdentity)User.Identity).FindFirst("FullName").Value)</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Account">Log In</a>
+        </li>
+    }
+</ul>
