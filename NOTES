@@ -1,0 +1,6 @@
+Change database from SqlServer to PostgreSql:
+1. In Data folder, delete Migrations folder
+2. In AppSettings.JSON, update Connection Strings 
+3. In Dependencies - Packages, delete Entity Framework Core SqlServer
+4. In Manege Nuget Package Manager, install Npgsql.EntityFrameworkCore.PostgreSQL
+5. In Startup.cs, replace "UseSqlServer" with "UseNpgsql"
