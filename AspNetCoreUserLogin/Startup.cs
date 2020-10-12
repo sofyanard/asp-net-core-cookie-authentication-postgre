@@ -32,7 +32,7 @@ namespace AspNetCoreUserLogin
                 .AddCookie();
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
+                options.UseNpgsql(
                     Configuration.GetConnectionString("DefaultConnection")));
         }
 
